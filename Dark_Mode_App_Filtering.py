@@ -112,6 +112,8 @@ class Ui_MainWindow(object):
         self.Choose_Filter.addItem("")
         self.Choose_Filter.addItem("")
         self.Choose_Filter.addItem("")
+        self.Choose_Filter.addItem("")
+        self.Choose_Filter.addItem("")
         self.horizontalLayout_3.addWidget(self.Choose_Filter)
         self.horizontalLayout_4.addWidget(self.splitter_2)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -145,7 +147,8 @@ class Ui_MainWindow(object):
         self.Choose_Filter.setItemText(4, _translate("MainWindow", "Median Filter "))
         self.Choose_Filter.setItemText(5, _translate("MainWindow", "Gaussian Filter"))
         self.Choose_Filter.setItemText(6, _translate("MainWindow", "2D Filter"))
-
+        self.Choose_Filter.setItemText(7, _translate("MainWindow", "Box Filter"))
+        self.Choose_Filter.setItemText(8, _translate("MainWindow", "Laplacian Filter"))
 
 if __name__ == "__main__":
     import sys
