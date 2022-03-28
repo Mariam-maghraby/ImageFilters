@@ -8,17 +8,12 @@ import pyqtgraph as pg
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import sympy
-from sympy import S, symbols, printing
 import sys
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
-import matplotlib.pylab as plt
-import math 
-from skimage.color import rgb2gray
-from skimage.io import imread
+import matplotlib.pylab as plt 
 import cv2
-from Dark_Mode_App_Filtering_2 import Ui_MainWindow
+from Dark_Mode_App_Filtering import Ui_MainWindow
 
 class MplCanvas2(FigureCanvasQTAgg):
        def __init__(self, parent=None, width=3.5, height=4, dpi=100):
@@ -57,8 +52,8 @@ class ApplicationWindow(QtWidgets.QMainWindow):
                         self.Canvas_for_Equalized_Image,self.ui.Filtered_Image_Title,self.ui.Frequency_Domain_filtered_Title]
         for canva in self.canvas:
             canva.setVisible(False)
-        self.ui.splitter.setSizes([800,400])
-        self.ui.splitter_2.setSizes([350,20]) #move it
+        self.ui.splitter.setSizes([800,200]) #was:(800,400)
+        self.ui.splitter_2.setSizes([400,20])  #was:(350,20)
         self.fig_size = 9
         self.saved_img = 'filtered Image.png'
 
@@ -105,7 +100,7 @@ class ApplicationWindow(QtWidgets.QMainWindow):
         self.Canvas_for_Filtered_Image_Image.axes.cla()
         self.Canvas_for_Frequency_Domain_filteredImage.axes.cla()
         self.index = self.ui.Choose_Filter.currentIndex()
-        print(self.index)
+        print(f"index:{self.index}")
         if self.index == 3:
             self.Mean_Filter()
         elif self.index == 4:
@@ -120,6 +115,8 @@ class ApplicationWindow(QtWidgets.QMainWindow):
             self.Laplacian_Filter()
         else:
             self.Frequency_Filter()
+        
+
 
     def Mean_Filter(self):
         #original_img = cv2.imread(file_path)
