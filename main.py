@@ -1,17 +1,11 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
 import qdarkstyle
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QWidget, QFileDialog
-from pyqtgraph import PlotWidget, PlotItem
-import pyqtgraph as pg
-import pandas as pd
+from PyQt5.QtWidgets import QFileDialog
 import numpy as np
-import matplotlib.pyplot as plt
 import sys
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
-import matplotlib.pylab as plt
 import cv2
 from Dark_Mode_App_Filtering import Ui_MainWindow
 
