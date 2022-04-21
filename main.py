@@ -254,9 +254,9 @@ class ApplicationWindow(QtWidgets.QMainWindow):
         dft_shift = np.fft.fftshift(img_dft)
 
         if self.index == 2:
-            filtered_dft_shift = self.highPassFiltering(dft_shift, 500)
+            filtered_dft_shift = self.highPassFiltering(dft_shift, 100)
         elif self.index == 1:
-            filtered_dft_shift = self.lowPassFiltering(dft_shift, 500)
+            filtered_dft_shift = self.lowPassFiltering(dft_shift, 100)
 
         filtered_frequency_image = np.log(np.abs(filtered_dft_shift)+1)
 
